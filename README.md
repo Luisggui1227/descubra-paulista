@@ -1,76 +1,99 @@
 # 🏖️ Descubra Paulista
 
-> Turismo, cultura e lazer da cidade do Paulista na palma da mão.
+> Turismo, cultura e lazer da cidade do Paulista (PE) na palma da mão.
 
 Projeto da disciplina **Front-End Frameworks** — Uninassau
 **Grupo 9 • Tema 4 — Turismo, Cultura e Lazer**
 
+| | |
+|---|---|
+| 🌐 **Aplicação publicada** | _link do deploy (Vercel) — preencher após publicar_ |
+| 📋 **Quadro do Trello** | https://trello.com/b/yf9iLEdc |
+| 💻 **Repositório** | https://github.com/Luisggui1227/descubra-paulista |
+| 🔑 **Conta de teste** | `demo@paulista.com` · senha `123456` |
+
+![Página inicial](docs/screenshots/inicio.jpg)
+
 ---
 
-## 📌 O problema
+## 📌 Problema
 
-Paulista tem praias, patrimônio histórico e cultura popular, mas quem mora ou visita a cidade não encontra essas informações reunidas em um só lugar.
+Paulista tem praias, patrimônio histórico e cultura popular, mas quem mora ou visita a cidade não encontra essas informações reunidas em um só lugar: os pontos turísticos ficam espalhados em redes sociais, os eventos são divulgados em cima da hora e os pequenos negócios culturais não têm vitrine.
 
-- **Informação espalhada:** pontos turísticos, horários e formas de chegar ficam dispersos em redes sociais e sites desatualizados.
-- **Eventos invisíveis:** shows, feiras e festas comunitárias são divulgados de última hora, e muita gente só fica sabendo depois.
-- **Cultura pouco valorizada:** a história local e os espaços culturais são pouco conhecidos até pelos próprios moradores.
-- **Pequenos negócios sem vitrine:** artesãos e empreendedores culturais têm dificuldade de alcançar turistas e o público local.
+## 🎯 Objetivo
 
-### Quem é afetado
+Um aplicativo web que reúne o que fazer em Paulista, com uma área restrita onde o visitante salva lugares favoritos, acompanha a agenda de eventos e monta o próprio roteiro de passeio.
 
-| Público | Necessidade |
+## ✅ Funcionalidades concluídas
+
+### Autenticação e acesso (semana 3)
+
+| Funcionalidade | Rota | Como funciona |
+|---|---|---|
+| Cadastro de usuário | `/cadastro` | Valida nome, e-mail, senha (mínimo 6, com medidor de força), confirmação e e-mail repetido; guarda os interesses |
+| Login simulado | `/login` | Confere e-mail e senha com os usuários fictícios salvos no navegador |
+| Recuperação de senha simulada | `/esqueci-senha` | Três passos: e-mail → aviso de envio → nova senha |
+| Área restrita | `/painel`, `/guia`, `/agenda`, `/roteiro` | `ProtectedRoute` manda para o login quem não entrou |
+| Logout | botão **Sair** | Encerra a sessão e bloqueia de novo a área restrita |
+
+### Funcionalidades do tema (semana 4)
+
+| Funcionalidade | Rota | O que dá para fazer |
+|---|---|---|
+| **Guia turístico** | `/guia` | Busca, filtro por categoria, detalhes, favoritos e “Adicionar ao roteiro” |
+| **Agenda de eventos** | `/agenda` | Busca, filtro por tipo e mês, “só gratuitos”, salvar eventos |
+| **Meu roteiro** | `/roteiro` | Formulário para criar e editar o roteiro: nome, data, lugares, ordem, horário e anotação |
+| **Painel do usuário** | `/painel` | Junta favoritos, eventos salvos, o roteiro e sugestões pelos interesses do cadastro |
+
+As páginas conversam entre si: o que é favoritado no Guia, salvo na Agenda ou montado no Roteiro aparece no Painel.
+
+| Guia | Agenda |
 |---|---|
-| Moradores | Descobrir opções de lazer perto de casa e saber o que está acontecendo na cidade |
-| Visitantes e turistas | Ter um guia confiável: o que visitar, quando ir e como montar um roteiro |
-| Empreendedores culturais | Ser encontrados por quem procura experiências, produtos e serviços locais |
+| ![Guia](docs/screenshots/guia.jpg) | ![Agenda](docs/screenshots/agenda.jpg) |
+| **Meu roteiro** | **Painel** |
+| ![Roteiro](docs/screenshots/roteiro.jpg) | ![Painel](docs/screenshots/painel.jpg) |
 
-## 💡 A solução
+<img src="docs/screenshots/celular.jpg" alt="Menu no celular" width="260">
 
-O **Descubra Paulista** é um aplicativo web que reúne em um só lugar o que fazer na cidade, com uma área restrita onde o usuário pode salvar preferências, roteiros e favoritos.
+### Não implementado (mudança de escopo)
 
-Visão completa do produto:
-
-1. Guia digital com pontos turísticos, históricos e culturais
-2. Agenda de eventos, shows, feiras e atividades comunitárias
-3. Roteiros personalizados de turismo e lazer
-4. Mapa interativo com fotos e curiosidades locais
-5. Espaço para empreendedores culturais divulgarem serviços e produtos
-
-## ✅ Features mínimas (escopo da primeira versão)
-
-- [ ] **Login**: acesso à área restrita com e-mail e senha
-- [ ] **Esqueci minha senha**: recuperação de acesso por e-mail
-- [ ] **Logoff**: saída segura que encerra a sessão
-- [ ] **Cadastro de usuário**: nome, e-mail, senha e interesses
-- [ ] **Página de conteúdo do tema**: guia de pontos turísticos e culturais de Paulista
-
-## 👥 Equipe
-
-| Integrante | Responsabilidade principal |
+| Ideia do Backlog | Motivo |
 |---|---|
-| Luis Guilherme de Moraes Melo | Login + rotas protegidas da área restrita • coordenação do Trello |
-| Arthur Ramos Pita | Cadastro de usuário (formulário e validações) |
-| Esdras Victor Carvalho da Silva | Esqueci minha senha (solicitação e redefinição) |
-| Kelvys Marcelo Soares Silva | Logoff + layout base (cabeçalho, menu e rodapé) |
-| Kauã Henrique de Lima Santos | Página de conteúdo: guia de pontos turísticos |
+| Mapa interativo | Exigiria biblioteca de mapas e chave de API; trocado pela Agenda de eventos, que atende melhor ao problema dos “eventos invisíveis” |
+| Vitrine para empreendedores | Precisaria de cadastro de terceiros e moderação (back-end); fica para uma próxima versão |
 
-Tarefas compartilhadas: README, apresentação e testes finais de cada feature.
+## ⚛️ Recursos do React usados
+
+| Recurso | Onde |
+|---|---|
+| `useState` | Todos os formulários, filtros, busca, menu do celular e etapas da recuperação de senha |
+| Eventos (`onChange`, `onClick`, `onSubmit`) | Formulários, botões de filtro, salvar, mover e remover paradas |
+| Renderização condicional | Mensagens de erro, Navbar logada × visitante, listas vazias, etapas da senha |
+| Listas com `.map()` e `.filter()` | Lugares, eventos, paradas do roteiro, recursos da home |
+| React Router | Rotas públicas e restritas, `NavLink`, redirecionamento após login e logout |
+| Context API | `AuthContext` (sessão) e `UserDataContext` (favoritos, eventos e roteiro) |
+
+### Componentes reutilizáveis (com props)
+
+`Button`, `FormField`, `AuthLayout`, `PageHeader`, `SearchBox`, `FilterChips`, `EmptyState`, `PlaceCard`, `EventCard`, `RoteiroItem`, `StatCard`, `Navbar`, `Footer`, `ProtectedRoute`.
 
 ## 🛠️ Tecnologias
 
-- [React](https://react.dev/) + [Vite](https://vitejs.dev/)
-- [React Router](https://reactrouter.com/) para páginas públicas e área restrita
-- Git e GitHub para versionamento
-- Trello para gestão das tarefas
+React + Vite · React Router · Context API · CSS puro com variáveis · Git, GitHub e Trello · Vercel
 
-## 🗂️ Organização
+## 👥 Integrantes
 
-- **Trello:** https://trello.com/b/yf9iLEdc
-- **Fluxo de trabalho:** uma branch por feature (`feature/login`, `feature/cadastro`, `feature/esqueci-senha`, `feature/logoff`, `feature/guia`), com Pull Request revisado por outro integrante antes do merge na `main`.
+| Integrante | Semana 3 | Semana 4 / final |
+|---|---|---|
+| Luis Guilherme de Moraes Melo | Estrutura, rotas, contextos, login e rota protegida | Integração, deploy, README e versão v1.0.0 |
+| Arthur Ramos Pita | Cadastro com validação | Meu roteiro |
+| Esdras Victor Carvalho da Silva | Recuperação de senha | Agenda de eventos |
+| Kelvys Marcelo Soares Silva | Navbar com logout e página inicial | Painel do usuário |
+| Kauã Henrique de Lima Santos | — | Guia turístico e testes dos fluxos |
 
-## ▶️ Como rodar o projeto
+## ▶️ Como executar
 
-> Disponível a partir da próxima entrega, quando o código for adicionado.
+Pré-requisito: [Node.js](https://nodejs.org/) 20 ou mais recente.
 
 ```bash
 git clone https://github.com/Luisggui1227/descubra-paulista.git
@@ -79,9 +102,23 @@ npm install
 npm run dev
 ```
 
-## 📅 Cronograma
+Abra o endereço que aparecer no terminal (normalmente http://localhost:5173) e entre com a conta de teste.
 
-| Semana | Entrega |
-|---|---|
-| 1 (30/10/2026) | Apresentação do problema, quadro do Trello e repositório com README |
-| Próximas | Protótipo das telas → autenticação (login, cadastro, esqueci a senha, logoff) → página de conteúdo |
+```bash
+npm run build     # versão de produção em dist/
+npm run preview   # serve a versão de produção
+npm run lint      # verifica o código
+```
+
+> Protótipo sem back-end: os usuários, a sessão e os dados ficam no `localStorage` do navegador. Os dados são fictícios e nenhuma senha real é armazenada.
+
+## 🚀 Deploy
+
+Publicado na Vercel a partir da branch `main`. O arquivo `vercel.json` faz todas as rotas abrirem o `index.html` (necessário para o React Router). Para a Netlify, o arquivo `public/_redirects` faz o mesmo.
+
+## 🔀 Fluxo de trabalho
+
+1. Cada funcionalidade em sua própria branch (`feature/nome`).
+2. Pull Request para a `main`, revisado e aprovado por outro integrante.
+3. O link do PR vai no cartão do Trello, que passa para **Concluído**.
+4. A versão de entrega é marcada com a tag **v1.0.0**.
