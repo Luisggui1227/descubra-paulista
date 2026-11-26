@@ -1,0 +1,17 @@
+.footer {
+  background: var(--ink);
+  color: #9fb3ba;
+  padding: 36px 0;
+  font-size: 14px;
+}
+
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer strong {
+  color: #fff;
+}
