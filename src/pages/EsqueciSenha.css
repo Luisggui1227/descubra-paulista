@@ -1,0 +1,30 @@
+.passos {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 26px;
+}
+
+.passos i {
+  flex: 1;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--line);
+}
+
+.passos i.ativo {
+  background: var(--teal);
+}
+
+.esqueci__enviado {
+  text-align: center;
+}
+
+.esqueci__icone {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: rgba(15, 124, 140, 0.12);
+  display: grid;
+  place-items: center;
+  margin: 0 auto 22px;
+}
