@@ -1,76 +1,61 @@
-# 🏖️ Descubra Paulista
+# Descubra Paulista
 
-> Turismo, cultura e lazer da cidade do Paulista na palma da mão.
+Projeto da disciplina de Front-End Frameworks (Uninassau), feito pelo Grupo 9. Tema 4: Turismo, Cultura e Lazer.
 
-Projeto da disciplina **Front-End Frameworks** — Uninassau
-**Grupo 9 • Tema 4 — Turismo, Cultura e Lazer**
+- Site publicado: _link da Vercel_
+- Trello: https://trello.com/b/yf9iLEdc
+- Conta para testar: `demo@paulista.com` / `123456`
 
----
+![Página inicial](docs/screenshots/inicio.jpg)
 
-## 📌 O problema
+## Problema
 
-Paulista tem praias, patrimônio histórico e cultura popular, mas quem mora ou visita a cidade não encontra essas informações reunidas em um só lugar.
+Paulista tem praia, forte histórico e cultura popular, mas a informação sobre o que fazer na cidade está espalhada. Os pontos turísticos aparecem soltos em rede social e site desatualizado, os eventos são divulgados em cima da hora e quem trabalha com cultura local tem pouco espaço para aparecer.
 
-- **Informação espalhada:** pontos turísticos, horários e formas de chegar ficam dispersos em redes sociais e sites desatualizados.
-- **Eventos invisíveis:** shows, feiras e festas comunitárias são divulgados de última hora, e muita gente só fica sabendo depois.
-- **Cultura pouco valorizada:** a história local e os espaços culturais são pouco conhecidos até pelos próprios moradores.
-- **Pequenos negócios sem vitrine:** artesãos e empreendedores culturais têm dificuldade de alcançar turistas e o público local.
+## Objetivo
 
-### Quem é afetado
+Fazer um site que junte em um lugar só os pontos turísticos, os eventos da cidade e uma forma simples de montar um roteiro de passeio. Para salvar favoritos, eventos e roteiro, o usuário precisa criar uma conta.
 
-| Público | Necessidade |
+## Funcionalidades
+
+**Acesso**
+- Cadastro com validação dos campos (nome, e-mail, senha com no mínimo 6 caracteres, confirmação e e-mail já cadastrado)
+- Login simulado
+- Recuperação de senha simulada, em três etapas
+- Área restrita: Painel, Guia, Agenda e Meu roteiro só abrem com login
+- Logout pelo botão "Sair"
+
+**Do tema**
+- Guia turístico: busca, filtro por categoria, detalhes do lugar e favoritos
+- Agenda de eventos: busca, filtro por tipo e por mês, opção de ver só os gratuitos e salvar eventos
+- Meu roteiro: formulário para criar e editar um roteiro, escolhendo os lugares, a ordem, o horário e uma anotação para cada parada
+- Painel: mostra o que o usuário salvou no Guia, na Agenda e no Roteiro, e sugere lugares de acordo com os interesses escolhidos no cadastro
+
+Não existe back-end. Os usuários e os dados ficam no `localStorage` do navegador e todos os dados são fictícios.
+
+| Guia | Agenda |
 |---|---|
-| Moradores | Descobrir opções de lazer perto de casa e saber o que está acontecendo na cidade |
-| Visitantes e turistas | Ter um guia confiável: o que visitar, quando ir e como montar um roteiro |
-| Empreendedores culturais | Ser encontrados por quem procura experiências, produtos e serviços locais |
+| ![Guia](docs/screenshots/guia.jpg) | ![Agenda](docs/screenshots/agenda.jpg) |
+| **Meu roteiro** | **Painel** |
+| ![Roteiro](docs/screenshots/roteiro.jpg) | ![Painel](docs/screenshots/painel.jpg) |
 
-## 💡 A solução
+### O que ficou de fora
 
-O **Descubra Paulista** é um aplicativo web que reúne em um só lugar o que fazer na cidade, com uma área restrita onde o usuário pode salvar preferências, roteiros e favoritos.
+O mapa interativo e a vitrine para empreendedores estavam no Backlog, mas não entraram nesta versão. O mapa dependia de uma biblioteca externa e de chave de API, então priorizamos a agenda de eventos. A vitrine precisaria de back-end para cadastrar e moderar os anúncios.
 
-Visão completa do produto:
+## Tecnologias
 
-1. Guia digital com pontos turísticos, históricos e culturais
-2. Agenda de eventos, shows, feiras e atividades comunitárias
-3. Roteiros personalizados de turismo e lazer
-4. Mapa interativo com fotos e curiosidades locais
-5. Espaço para empreendedores culturais divulgarem serviços e produtos
+- React com Vite
+- React Router (rotas e rota protegida)
+- Context API para a sessão (`AuthContext`) e para os dados do usuário (`UserDataContext`)
+- CSS puro
+- Deploy na Vercel
 
-## ✅ Features mínimas (escopo da primeira versão)
+Componentes reutilizáveis que criamos: `Button`, `FormField`, `AuthLayout`, `PageHeader`, `SearchBox`, `FilterChips`, `EmptyState`, `PlaceCard`, `EventCard`, `RoteiroItem`, `StatCard`, `Navbar` e `Footer`.
 
-- [ ] **Login**: acesso à área restrita com e-mail e senha
-- [ ] **Esqueci minha senha**: recuperação de acesso por e-mail
-- [ ] **Logoff**: saída segura que encerra a sessão
-- [ ] **Cadastro de usuário**: nome, e-mail, senha e interesses
-- [ ] **Página de conteúdo do tema**: guia de pontos turísticos e culturais de Paulista
+## Como rodar
 
-## 👥 Equipe
-
-| Integrante | Responsabilidade principal |
-|---|---|
-| Luis Guilherme de Moraes Melo | Login + rotas protegidas da área restrita • coordenação do Trello |
-| Arthur Ramos Pita | Cadastro de usuário (formulário e validações) |
-| Esdras Victor Carvalho da Silva | Esqueci minha senha (solicitação e redefinição) |
-| Kelvys Marcelo Soares Silva | Logoff + layout base (cabeçalho, menu e rodapé) |
-| Kauã Henrique de Lima Santos | Página de conteúdo: guia de pontos turísticos |
-
-Tarefas compartilhadas: README, apresentação e testes finais de cada feature.
-
-## 🛠️ Tecnologias
-
-- [React](https://react.dev/) + [Vite](https://vitejs.dev/)
-- [React Router](https://reactrouter.com/) para páginas públicas e área restrita
-- Git e GitHub para versionamento
-- Trello para gestão das tarefas
-
-## 🗂️ Organização
-
-- **Trello:** https://trello.com/b/yf9iLEdc
-- **Fluxo de trabalho:** uma branch por feature (`feature/login`, `feature/cadastro`, `feature/esqueci-senha`, `feature/logoff`, `feature/guia`), com Pull Request revisado por outro integrante antes do merge na `main`.
-
-## ▶️ Como rodar o projeto
-
-> Disponível a partir da próxima entrega, quando o código for adicionado.
+Precisa do Node.js 20 ou mais novo.
 
 ```bash
 git clone https://github.com/Luisggui1227/descubra-paulista.git
@@ -79,9 +64,14 @@ npm install
 npm run dev
 ```
 
-## 📅 Cronograma
+Depois é só abrir o endereço que aparece no terminal (normalmente http://localhost:5173).
 
-| Semana | Entrega |
-|---|---|
-| 1 (30/10/2026) | Apresentação do problema, quadro do Trello e repositório com README |
-| Próximas | Protótipo das telas → autenticação (login, cadastro, esqueci a senha, logoff) → página de conteúdo |
+## Integrantes
+
+- Luis Guilherme de Moraes Melo: estrutura do projeto, login, rota protegida e deploy
+- Arthur Ramos Pita: cadastro e Meu roteiro
+- Esdras Victor Carvalho da Silva: recuperação de senha e agenda de eventos
+- Kelvys Marcelo Soares Silva: navbar com logout, página inicial e painel
+- Kauã Henrique de Lima Santos: guia turístico e testes
+
+Cada funcionalidade foi feita em uma branch própria e entrou na `main` por Pull Request revisado por outro integrante. As tarefas estão no Trello.
