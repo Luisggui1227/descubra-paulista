@@ -60,6 +60,7 @@ export default function Guia() {
               <button className="modal__fechar" onClick={() => setAberto(null)} aria-label="Fechar" autoFocus>
                 ✕
               </button>
+              {aberto.credito && <span className="modal__credito">{aberto.credito}</span>}
             </div>
             <div className="modal__body">
               <span className="kicker">{aberto.categoria}</span>
