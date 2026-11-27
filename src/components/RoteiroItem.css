@@ -1,0 +1,132 @@
+.parada {
+  display: grid;
+  grid-template-columns: 44px 1fr auto;
+  gap: 16px;
+  align-items: start;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.parada__num {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--coral);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.parada__topo {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.parada__topo h3 {
+  font-size: 20px;
+  color: var(--deep);
+}
+
+.parada__cat {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--mist);
+  color: var(--deep);
+}
+
+.parada__info > p {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 4px 0 12px;
+}
+
+.parada__campos {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.parada__campos label span {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--deep);
+  margin-bottom: 4px;
+}
+
+.parada__campos input {
+  height: 40px;
+  border-radius: 10px;
+  border: 1.5px solid var(--line);
+  padding: 0 12px;
+  font: inherit;
+  font-size: 14px;
+}
+
+.parada__campos input:focus {
+  outline: none;
+  border-color: var(--teal);
+}
+
+.parada__nota {
+  flex: 1;
+  min-width: 180px;
+}
+
+.parada__nota input {
+  width: 100%;
+}
+
+.parada__acoes {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.parada__acoes button {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1.5px solid var(--line);
+  font-weight: 700;
+  color: var(--deep);
+  background: #fff;
+}
+
+.parada__acoes button:hover:not(:disabled) {
+  background: var(--mist);
+}
+
+.parada__acoes button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.parada__acoes .parada__remover {
+  color: var(--danger);
+}
+
+@media (max-width: 560px) {
+  .parada {
+    grid-template-columns: 36px 1fr;
+  }
+  .parada__num {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+  .parada__acoes {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}
