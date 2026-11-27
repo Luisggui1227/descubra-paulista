@@ -1,0 +1,163 @@
+.painel {
+  padding: 32px 0 72px;
+}
+
+.painel__interesses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.painel__interesses span {
+  background: var(--deep);
+  color: #fff;
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-weight: 500;
+}
+
+.painel__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.painel__grade {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.painel__bloco {
+  padding: 24px;
+  border-radius: var(--radius);
+  background: var(--mist);
+}
+
+.painel__bloco header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.painel__bloco h2 {
+  font-size: 22px;
+  color: var(--deep);
+}
+
+.painel__bloco header a {
+  color: var(--teal);
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.painel__bloco--destaque {
+  background: var(--deep);
+  color: #fff;
+}
+
+.painel__bloco--destaque h2 {
+  color: #fff;
+}
+
+.painel__bloco--destaque .painel__lista li {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.painel__bloco--destaque .painel__lista b {
+  color: #fff;
+}
+
+.painel__bloco--destaque .painel__lista span,
+.painel__sub {
+  color: #cfdde1;
+}
+
+.painel__bloco--destaque .btn {
+  margin-top: 14px;
+  background: var(--coral);
+}
+
+.painel__sub {
+  font-size: 14px;
+  margin: -6px 0 12px;
+}
+
+.painel__lista {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.painel__lista li {
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+.painel__lista b {
+  display: block;
+  color: var(--deep);
+}
+
+.painel__lista span {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.painel__lista--numerada {
+  counter-reset: parada;
+}
+
+.painel__lista--numerada li {
+  counter-increment: parada;
+  padding-left: 46px;
+  position: relative;
+}
+
+.painel__lista--numerada li::before {
+  content: counter(parada);
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--coral);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+
+.painel__data {
+  font-size: 14px;
+  color: var(--muted);
+  margin: -6px 0 12px;
+}
+
+.painel__vazio {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+@media (max-width: 860px) {
+  .painel__grade {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .painel__stats {
+    grid-template-columns: 1fr;
+  }
+}
