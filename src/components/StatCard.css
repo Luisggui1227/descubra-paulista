@@ -1,0 +1,47 @@
+.stat {
+  position: relative;
+  display: block;
+  padding: 22px 24px;
+  border-radius: var(--radius);
+  background: #fff;
+  border: 1px solid var(--line);
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.stat:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+.stat b {
+  display: block;
+  font-family: "Fraunces", serif;
+  font-size: 44px;
+  line-height: 1.05;
+}
+
+.stat span {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.stat i {
+  position: absolute;
+  right: 22px;
+  top: 22px;
+  font-style: normal;
+  color: var(--muted);
+}
+
+.stat--teal b {
+  color: var(--teal);
+}
+
+.stat--coral b {
+  color: var(--coral);
+}
+
+.stat--sun b {
+  color: #c48a12;
+}
