@@ -1,0 +1,36 @@
+.agenda {
+  padding: 32px 0 64px;
+}
+
+.agenda__filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  align-items: center;
+}
+
+.agenda__check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--deep);
+}
+
+.agenda__check input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--teal);
+}
+
+.agenda__total {
+  margin: 22px 0 14px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.agenda__lista {
+  display: grid;
+  gap: 14px;
+}
