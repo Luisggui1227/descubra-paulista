@@ -2,7 +2,7 @@
 
 Projeto da disciplina de Front-End Frameworks (Uninassau), feito pelo Grupo 9. Tema 4: Turismo, Cultura e Lazer.
 
-- Site publicado: _link da Vercel_
+- Site publicado: https://descubra-paulista.vercel.app
 - Trello: https://trello.com/b/yf9iLEdc
 - Conta para testar: `demo@paulista.com` / `123456`
 
@@ -66,6 +66,15 @@ npm run dev
 
 Depois é só abrir o endereço que aparece no terminal (normalmente http://localhost:5173).
 
+## Créditos das fotos
+
+- Forte de Pau Amarelo: Fabiana Barbosa do N. Silva, [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Forte_de_Pau_Amarelo_Paulista_PE.jpg), licença CC BY-SA 4.0
+- Praia de Conceição: Umbraosm, [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Praia_nossa_senhora_da_concei%C3%A7%C3%A3o_paulista_pernambuco.jpg), licença CC BY-SA 4.0
+- Maria Farinha: Jobosco, [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Maria_Farinha_Paulista_(Pernambuco).jpg), licença CC BY-SA 4.0
+- Orla, Pau Amarelo e Janga: fotos do grupo
+
+As fotos do Wikimedia foram redimensionadas para a web.
+
 ## Integrantes
 
 - Luis Guilherme de Moraes Melo: estrutura do projeto, login, rota protegida e deploy
@@ -74,4 +83,6 @@ Depois é só abrir o endereço que aparece no terminal (normalmente http://loca
 - Kelvys Marcelo Soares Silva: navbar com logout, página inicial e painel
 - Kauã Henrique de Lima Santos: guia turístico e testes
 
-Cada funcionalidade foi feita em uma branch própria e entrou na `main` por Pull Request revisado por outro integrante. As tarefas estão no Trello.
+Algumas partes foram enviadas ao GitHub pelo Luis, porque os integrantes não conseguiram subir a tempo. Isso está registrado nos cartões do Trello.
+
+Cada funcionalidade foi feita em uma branch própria e entrou na `main` por Pull Request (PRs #1 a #10). Os testes dos fluxos principais estão em [docs/TESTES.md](docs/TESTES.md) e as tarefas no Trello.
